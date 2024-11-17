@@ -20,7 +20,7 @@ const useShortenLink: Hook = () => {
   const shortenUrl = async () => {
     console.log(JSON.stringify(body));
     try {
-      const url = await fetch("https://short-ish.onrender.com", {
+      const url = await fetch("https://short-xish.onrender.com/api/url", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

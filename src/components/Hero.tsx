@@ -3,7 +3,7 @@ import HeroImage from "/assets/working_with_computer.svg";
 const Hero = () => {
   return (
     <section className="bg-white flex gap-10 lg:pl-[167px] px-6 lg:flex-row flex-col-reverse min-h-[700px] lg:items-center border-[#ffffff] border-b-[84px]">
-      <div className="text-center">
+      <div className="text-center lg:text-left">
         <h1 className="lg:text-[80px] text-[42px] lg:tracking-[-2px] m-0 font-bold leading-[48px] lg:leading-[90px]">
           More than just shorter links
         </h1>
