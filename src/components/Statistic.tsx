@@ -4,21 +4,21 @@ import icon3 from "/assets/icon3.svg";
 
 const Statistic = () => {
   return (
-    <section className="lg:px-[167px] px-6 mt-[36px] mb-28">
+    <section className="md:px-[167px] px-6 mt-[36px] mb-28">
       <div className="text-center mb-14">
-        <h1 className="text font-bold lg:text-[40px] text-[28px]">
+        <h1 className="text font-bold md:text-[40px] text-[28px]">
           Advanced Statistics
         </h1>
-        <p className="text-[#9E9AA8] lg:w-3/4 mx-auto font-medium text-[16px] lg:text-[18px] lg:leading-9 leading-7 tracking-[0.15px]">
+        <p className="text-[#9E9AA8] md:w-3/4 mx-auto font-medium text-[16px] md:text-[18px] md:leading-9 leading-7 tracking-[0.15px]">
           Track how your links are performing across the web with our advanced
           statistics dashboard.
         </p>
       </div>
-      <div className="gap-6 min-h-[400px] text-center w-full flex lg:flex-row flex-col items-center relative">
-        <div className="bg-primary lg:w-full w-2 h-full lg:h-2 absolute -z-10"></div>
-        <div className="lg:relative lg:-top-[45px] w-[327px] mx-auto lg:w-[350px] h-[311px]">
+      <div className="gap-6 min-h-[400px] md:text-left text-center w-full flex md:flex-row flex-col items-center relative">
+        <div className="bg-primary md:w-full w-2 h-full md:h-2 absolute -z-10"></div>
+        <div className="md:relative md:-top-[45px] w-[327px] mx-auto md:w-[350px] h-[311px]">
           <div className="bg-white h-[267px] mt-[44px] px-8">
-            <div className="h-[88px] w-[88px] lg:left-0 left-[88px] bg-purple rounded-full relative -top-[44px]">
+            <div className="h-[88px] w-[88px] md:left-0 left-[88px] bg-purple rounded-full relative -top-[44px]">
               <img
                 className="absolute bottom-6 top-6 left-6 right-6"
                 src={icon2}
@@ -35,9 +35,9 @@ const Statistic = () => {
             </p>
           </div>
         </div>
-        <div className="lg:relative w-[327px] mx-auto lg:w-[350px] h-[311px] ">
+        <div className="md:relative w-[327px] mx-auto md:w-[350px] h-[311px] ">
           <div className="bg-white h-[267px] mt-[44px] px-8">
-            <div className="h-[88px] w-[88px] lg:left-0 left-[88px] bg-purple rounded-full relative -top-[44px]">
+            <div className="h-[88px] w-[88px] md:left-0 left-[88px] bg-purple rounded-full relative -top-[44px]">
               <img
                 className="absolute bottom-6 top-6 left-6 right-6"
                 src={icon3}
@@ -54,9 +54,9 @@ const Statistic = () => {
             </p>
           </div>
         </div>
-        <div className="lg:relative lg:-bottom-[45px] w-[327px] mx-auto lg:w-[350px] h-[311px]">
+        <div className="md:relative md:-bottom-[45px] w-[327px] mx-auto md:w-[350px] h-[311px]">
           <div className="bg-white h-[267px] mt-[44px] px-8">
-            <div className="h-[88px] w-[88px] lg:left-0 left-[88px] bg-purple rounded-full relative -top-[44px]">
+            <div className="h-[88px] w-[88px] md:left-0 left-[88px] bg-purple rounded-full relative -top-[44px]">
               <img
                 className="absolute bottom-[20px] top-[20px] left-[20px] right-[20px]"
                 src={icon1}
