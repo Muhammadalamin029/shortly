@@ -8,7 +8,7 @@ type Hook = () => {
 
 const useShortenLink: Hook = () => {
   const [link, setLink] = useState("");
-  const [Url, setUrl] = useState();
+  // const [Url, setUrl] = useState();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLink(e.target.value);
@@ -29,8 +29,8 @@ const useShortenLink: Hook = () => {
         body: JSON.stringify(body),
       });
       const data = await url.json();
-      setUrl(data);
-      console.log(Url);
+      // setUrl(data);
+      console.log(data);
     } catch (error: any) {
       console.error(error.message);
     }

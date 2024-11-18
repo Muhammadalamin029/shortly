@@ -37,7 +37,7 @@ const Navbar = () => {
         <FaHamburger />
       </button>
       <div
-        className={`flex flex-col absolute transition-all duration-500 ease-in justify-between items-center left-0 ${
+        className={`flex flex-col md:hidden absolute transition-all duration-500 ease-in justify-between items-center left-0 ${
           toggle ? "left-0" : "-left-[400px]"
         } bg-purple w-full md:w-full top-24 `}
       >
