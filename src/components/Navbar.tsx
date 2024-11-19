@@ -37,9 +37,9 @@ const Navbar = () => {
         <FaHamburger />
       </button>
       <div
-        className={`flex flex-col md:hidden absolute transition-all duration-500 ease-in justify-between items-center left-0 ${
-          toggle ? "left-0" : "-left-[400px]"
-        } bg-purple w-full md:w-full top-24 `}
+        className={`flex flex-col md:hidden absolute transition-all duration-500 ease-in justify-between items-center ${
+          toggle ? "left-0" : "-left-[100vh]"
+        } bg-purple w-full top-24 `}
       >
         <div className="flex flex-col items-center text-[20px] font-bold text-[#9E9AA8;]">
           <button className="w-screen h-[60px] text-white hover:bg-primary">
