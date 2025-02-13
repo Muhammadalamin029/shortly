@@ -49,9 +49,12 @@ const Input = () => {
         </button>
       </div>
       <div className="relative -top-[60px]">
-        {links?.map((link) => (
-          <InputResponse key={link.id} link={location + link?.shortId} />
-        ))}
+        {links?.map(
+          (link) =>
+            link?.shortId && (
+              <InputResponse key={link?.id} url={location + link.shortId} />
+            )
+        )}
       </div>
     </section>
   );

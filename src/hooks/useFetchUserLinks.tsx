@@ -4,12 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 
 interface Link {
   id: string;
-  created_by?: string;
   shortId?: string;
+  created_by?: string;
   destination?: string;
 }
 
-const fetchUserLinks = async (): Promise<Link[] | undefined> => {
+const fetchUserLinks = async (): Promise<Link[]> => {
   const user = auth.currentUser;
   if (user) {
     const userId = user.uid;
@@ -19,10 +19,12 @@ const fetchUserLinks = async (): Promise<Link[] | undefined> => {
     );
     const querySnapshot = await getDocs(linksQuery);
     return querySnapshot.docs
-      .map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }))
+      .map(
+        (doc): Link => ({
+          id: doc.id,
+          ...doc.data(),
+        })
+      )
       .filter((link) => link.created_by === userId);
   } else {
     throw new Error("No user is currently signed in.");

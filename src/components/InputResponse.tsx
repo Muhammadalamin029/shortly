@@ -1,17 +1,17 @@
 interface PropType {
-  link: string;
+  url: string;
 }
 
-const InputResponse = ({ link }: PropType) => {
+const InputResponse = ({ url }: PropType) => {
   const handleCopy = () => {
-    navigator.clipboard.writeText(link);
+    navigator.clipboard.writeText(url);
   };
 
   return (
     <div className="w-full h-[72px] mb-5 p-6 rounded-md flex items-center justify-between bg-white text-text">
       <div className="md:flex md:w-[100%] justify-between">
-        <span>{link}</span>
-        <span className="text-primary">{link}</span>
+        <span>{url}</span>
+        <span className="text-primary">{url}</span>
       </div>
       <button
         onClick={handleCopy}
