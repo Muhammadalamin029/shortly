@@ -25,14 +25,16 @@ const Statistic = () => {
                 alt=""
               />
             </div>
-            <h2 className="font-bold text-[22px] leading-8 text-[#34313D]">
-              Brand Recognition
-            </h2>
-            <p className="font-medium text-[15px] leading-[24px] mt-1 text-[#9E9AA8]">
-              Boost your brand recognition with each click. Generic links don’t
-              mean a thing. Branded links help instil confidence in your
-              content.
-            </p>
+            <div className="absolute w-[80%]">
+              <h2 className="font-bold text-[22px] leading-8 text-[#34313D]">
+                Brand Recognition
+              </h2>
+              <p className="font-medium text-[15px] leading-[24px] mt-1 text-[#9E9AA8]">
+                Boost your brand recognition with each click. Generic links
+                don’t mean a thing. Branded links help instil confidence in your
+                content.
+              </p>
+            </div>
           </div>
         </div>
         <div className="md:relative w-[327px] mx-auto md:w-[350px] h-[311px] ">
@@ -44,14 +46,16 @@ const Statistic = () => {
                 alt=""
               />
             </div>
-            <h2 className="font-bold text-[22px] leading-8 text-[#34313D]">
-              Detailed Records
-            </h2>
-            <p className="font-medium text-[15px] leading-[24px] mt-1 text-[#9E9AA8]">
-              Gain insights into who is clicking your links. Knowing when and
-              where people engage with your content helps inform better
-              decisions.
-            </p>
+            <div className="absolute w-[80%]">
+              <h2 className="font-bold text-[22px] leading-8 text-[#34313D]">
+                Detailed Records
+              </h2>
+              <p className="font-medium text-[15px] leading-[24px] mt-1 text-[#9E9AA8]">
+                Gain insights into who is clicking your links. Knowing when and
+                where people engage with your content helps inform better
+                decisions.
+              </p>
+            </div>
           </div>
         </div>
         <div className="md:relative md:-bottom-[45px] w-[327px] mx-auto md:w-[350px] h-[311px]">
@@ -63,13 +67,15 @@ const Statistic = () => {
                 alt=""
               />
             </div>
-            <h2 className="font-bold text-[22px] leading-8 text-[#34313D]">
-              Fully Customizable
-            </h2>
-            <p className="font-medium text-[15px] leading-[24px] mt-1 text-[#9E9AA8]">
-              Improve brand awareness and content discoverability through
-              customizable links, supercharging audience engagement.
-            </p>
+            <div className="absolute w-[80%]">
+              <h2 className="font-bold text-[22px] leading-8 text-[#34313D]">
+                Fully Customizable
+              </h2>
+              <p className="font-medium text-[15px] leading-[24px] mt-1 text-[#9E9AA8]">
+                Improve brand awareness and content discoverability through
+                customizable links, supercharging audience engagement.
+              </p>
+            </div>
           </div>
         </div>
       </div>
