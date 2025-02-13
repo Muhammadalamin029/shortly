@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import { FaHamburger } from "react-icons/fa";
 import { auth } from "../config/firebase";
 import { signOut } from "firebase/auth";
+import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
+  const { isLoggedIn } = useAuth();
 
   return (
     <nav className="bg-white">
@@ -27,7 +29,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="">
-            {!auth.currentUser ? (
+            {!isLoggedIn ? (
               <>
                 <button className="w-[105px] h-10 rounded-[28px]">Login</button>
                 <button className="bg-primary hover:bg-primaryHover w-[105px] text-white font-bold h-10 rounded-[28px]">

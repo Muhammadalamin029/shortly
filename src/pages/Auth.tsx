@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../config/firebase";
+import toast from "react-hot-toast";
 
 interface AuthModalProps {
   onClose: () => void;
@@ -22,9 +23,20 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
     }
     try {
       if (isSignUp) {
-        await createUserWithEmailAndPassword(auth, email, password);
+        await toast.promise(
+          createUserWithEmailAndPassword(auth, email, password),
+          {
+            loading: "Creating account...",
+            success: "Account created successfully",
+            error: "Error creating account",
+          }
+        );
       } else {
-        await signInWithEmailAndPassword(auth, email, password);
+        await toast.promise(signInWithEmailAndPassword(auth, email, password), {
+          loading: "Signing in...",
+          success: "Signed in successfully",
+          error: "Error signing in",
+        });
       }
       onClose();
     } catch (error) {

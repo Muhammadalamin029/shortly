@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useFetchUserLinks from "../hooks/useFetchUserLinks";
 import useShortenLink from "../hooks/useShortenLink";
 import AuthModal from "../pages/Auth";
@@ -49,11 +50,21 @@ const Input = () => {
         </button>
       </div>
       <div className="relative -top-[60px]">
-        {links?.map(
-          (link) =>
-            link?.shortId && (
-              <InputResponse key={link?.id} url={location + link.shortId} />
-            )
+        {links
+          ?.slice(0, 3)
+          .map(
+            (link) =>
+              link?.shortId && (
+                <InputResponse key={link?.id} url={location + link.shortId} />
+              )
+          )}
+        {(links?.length ?? 0) > 3 && (
+          <Link
+            to="/all-links"
+            className="mt-4 bg-primary hover:bg-primaryHover text-white font-bold py-2 px-4 rounded"
+          >
+            View All Links
+          </Link>
         )}
       </div>
     </section>

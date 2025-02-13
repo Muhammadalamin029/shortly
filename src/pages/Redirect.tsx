@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import toast from "react-hot-toast";
 import { useParams, useNavigate } from "react-router-dom";
 
 const Redirect: React.FC = () => {
@@ -17,17 +18,17 @@ const Redirect: React.FC = () => {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        console.log(data);
 
         window.location.href = data.destination;
       } catch (error) {
+        toast.error("Invalid URL");
         console.error("Error fetching the original URL", error);
         navigate("/");
       }
     };
 
     fetchOriginalUrl();
-  }, [shortUrl, navigate]);
+  }, [shortUrl]);
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">

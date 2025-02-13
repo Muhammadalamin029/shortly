@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { auth, db } from "../config/firebase";
+import toast from "react-hot-toast";
+import { useQueryClient } from "@tanstack/react-query";
 
 interface serverReturn {
   newUrl: {
@@ -16,6 +18,8 @@ const useShortenLink = () => {
   const [error, setError] = useState(false);
   const [modal, setModal] = useState(false);
   const [shortening, setShortening] = useState(false);
+
+  const client = useQueryClient();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLink(e.target.value);
@@ -37,10 +41,10 @@ const useShortenLink = () => {
     }
     if (link === "") {
       setError(true);
+      toast.error("Please enter a URL");
       return;
     } else {
       setError(false);
-      console.log("Log in");
       try {
         setShortening(true);
         const url = await fetch("https://short-xish.onrender.com/api/url", {
@@ -58,14 +62,24 @@ const useShortenLink = () => {
           shortId,
         };
 
-        if (data) {
-          const docRef = await addDoc(collection(db, "links"), firebaseMessage);
+        if (url.ok) {
+          const docRef = await toast.promise(
+            addDoc(collection(db, "links"), firebaseMessage),
+            {
+              loading: "Creating link...",
+              success: "Link created!",
+              error: "An error occurred",
+            }
+          );
           console.log("Document written with ID: ", docRef.id);
         }
       } catch (error: any) {
-        console.error(error.message);
+        console.error(error);
       } finally {
         setShortening(false);
+        client.invalidateQueries({
+          queryKey: ["userLinks"],
+        });
       }
     }
   };
